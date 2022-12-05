@@ -22,6 +22,10 @@ const displayUI = function () {
       itemContainerEl.appendChild(listEl);
     });
   }
+
+  isEditing = false;
+  editId = null;
+  itemEl.value = null;
 };
 
 const deleteItem = function (id) {
@@ -44,6 +48,31 @@ formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   //   Truthy value and falsy value concept
   // null, "", 0 - false
+
+  if (itemEl.value) {
+    if (isEditing) {
+      items = items.map((item) => {
+        if (item.id === editId) {
+          return { ...item, value: itemEl.value };
+        } else {
+          return item;
+        }
+      });
+
+      // re display on the screen
+      displayUI();
+    } else {
+      const item = {
+        id: new Date().valueOf(),
+        value: itemEl.value,
+      };
+      items.push(item);
+      // Display the items on the screen
+      displayUI();
+    }
+  } else {
+    alert("Enter a valid input");
+  }
   if (isEditing) {
     items = items.map((item) => {
       if (item.id === editId) {
@@ -52,25 +81,12 @@ formEl.addEventListener("submit", (e) => {
         return item;
       }
     });
+
     // re display on the screen
     displayUI();
-    isEditing = false;
-    editId = null;
-    itemEl.value = null;
   } else {
     if (itemEl.value) {
-      const item = {
-        id: new Date().valueOf(),
-        value: itemEl.value,
-      };
-
-      items.push(item);
-      itemEl.value = null;
-      console.log(items);
-      // Display the items on the screen
-      displayUI();
     } else {
-      alert("Enter a valid input");
     }
   }
 });
