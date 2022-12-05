@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --clr-dark: #fc00ff;
+  --clr-white: #fff;
+  --max-width: 1140px;
+  --transition: all 0.5s ease;
+}
+
+/* pseudo elements in css */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0093e9;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* global css */
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  font-weight: 600;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+
+  padding: 0.8rem 1.5rem;
+
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  /* customize */
+  background-color: #fc00ff;
+  color: #fff;
+  border: 2px solid #fc00ff;
+}
+
+.form-item {
+  width: 80%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.input-item {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  width: 24rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0.5rem 1.75rem 3rem 1.75rem;
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.submit-form {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background-color: #d03d58;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+/* label,
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+} */
+
+label {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+input {
+  padding: 1rem 1.25rem;
+  font-size: 1.25rem;
+  font-size: 600;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.btn-light {
+  background-color: var(--clr-white);
+  border: 2px solid var(--clr-white);
+  color: var(--clr-dark);
+  transition: var(--transition);
+}
+
+.btn-light:hover {
+  background-color: transparent;
+  color: var(--clr-white);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin: 1.5rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 23rem;
+  }
+
+  input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
